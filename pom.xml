@@ -33,10 +33,13 @@
 
 	<distributionManagement>
 		<repository>
-			<id>franga2000-repo</id>
-			<name>public-releases</name>
-			<url>http://repo.franga2000.com/artifactory/public</url>
+			<id>tealcube-repo</id>
+			<url>http://tealcube.com/nexus/content/repositories/releases</url>
 		</repository>
+		<snapshotRepository>
+			<id>tealcube-snapshots</id>
+			<url>http://tealcube.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
