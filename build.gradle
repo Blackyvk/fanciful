@@ -1,0 +1,71 @@
+plugins {
+    id "java"
+    id "com.github.hierynomus.license" version "0.11.0"
+    id "pl.allegro.tech.build.axion-release" version "1.2.4"
+    id "com.github.johnrengelman.shadow" version "1.2.0"
+    id "signing"
+}
+
+sourceCompatibility = 1.7
+
+scmVersion {
+    tag {
+        prefix = project.name
+    }
+    createReleaseCommit true
+    releaseCommitMessage { version, position -> "[ci skip] release version: " + version}
+}
+
+group = "com.tealcube.minecraft.bukkit"
+version = scmVersion.version
+
+apply from: "publish-java.gradle"
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+    maven {
+        url "https://hub.spigotmc.org/nexus/content/groups/public/"
+    }
+}
+
+dependencies {
+    compile "org.bukkit:bukkit:1.8.3-R0.1-SNAPSHOT"
+    compile "com.google.code.gson:gson:2.1"
+    compile "com.tealcube.minecraft.bukkit:hilt:2.0.1"
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+shadowJar {
+    baseName = project.name + "-all"
+    classifier = ""
+
+    relocate "com.google.gson", "com.tealcube.minecraft.bukkit.fanciful.shade.gson"
+    relocate "com.tealcube.minecraft.bukkit.hilt", "com.tealcube.minecraft.bukkit.fanciful.shade.hilt"
+    relocate "com.tealcube.minecraft.bukkit.config", "com.tealcube.minecraft.bukkit.fanciful.shade.config"
+    relocate "com.tealcube.minecraft.bukkit.mirror", "com.tealcube.minecraft.bukkit.fanciful.shade.reflect"
+}
+
+artifacts {
+    archives shadowJar, javadocJar, sourcesJar
+}
+
+license {
+    header file('HEADER')
+    ignoreFailures false
+    strictCheck true
+    mapping {
+        java = 'SLASHSTAR_STYLE'
+    }
+}
