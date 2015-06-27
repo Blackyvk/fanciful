@@ -67,6 +67,7 @@ artifacts {
 
 license {
     header file('HEADER')
+    include "com/tealcube/minecraft/bukkit/**/*.java"
     ignoreFailures false
     strictCheck true
     mapping {
