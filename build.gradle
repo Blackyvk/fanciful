@@ -48,9 +48,6 @@ task sourcesJar(type: Jar) {
 }
 
 shadowJar {
-    baseName = project.name + "-all"
-    classifier = ""
-
     dependencies {
         exclude "org.spigotmc:spigot-api"
     }
