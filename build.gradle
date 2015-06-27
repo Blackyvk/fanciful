@@ -2,7 +2,7 @@ plugins {
     id "java"
     id "com.github.hierynomus.license" version "0.11.0"
     id "pl.allegro.tech.build.axion-release" version "1.2.4"
-    id "com.github.johnrengelman.shadow" version "1.2.0"
+    id "com.github.johnrengelman.shadow" version "1.2.1"
     id "signing"
 }
 
@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    compile "org.bukkit:bukkit:1.8.3-R0.1-SNAPSHOT"
+    compile "org.spigotmc:spigot-api:1.8.3-R0.1-SNAPSHOT"
     compile "com.google.code.gson:gson:2.1"
     compile "com.tealcube.minecraft.bukkit:hilt:2.0.2-SNAPSHOT"
 }
@@ -50,6 +50,10 @@ task sourcesJar(type: Jar) {
 shadowJar {
     baseName = project.name + "-all"
     classifier = ""
+
+    dependencies {
+        exclude "org.spigotmc:spigot-api"
+    }
 
     relocate "com.google.gson", "com.tealcube.minecraft.bukkit.fanciful.shade.gson"
     relocate "com.tealcube.minecraft.bukkit.hilt", "com.tealcube.minecraft.bukkit.fanciful.shade.hilt"

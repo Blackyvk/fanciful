@@ -28,15 +28,14 @@ import static mkremins.fanciful.TextualComponent.rawText;
 
 /**
  * Represents a formattable message. Such messages can use elements such as colors, formatting codes, hover and click
- * data, and other features provided by the vanilla Minecraft <a href="http://minecraft.gamepedia
- * .com/Tellraw#Raw_JSON_Text">JSON
+ * data, and other features provided by the vanilla Minecraft <a href="http://minecraft.gamepedia.com/Tellraw#Raw_JSON_Text">JSON
  * message formatter</a>.
  * This class allows plugins to emulate the functionality of the vanilla Minecraft <a
  * href="http://minecraft.gamepedia.com/Commands#tellraw">tellraw command</a>.
  * <p>
  * This class follows the builder pattern, allowing for method chaining.
  * It is set up such that invocations of property-setting methods will affect the current editing component,
- * and a call to {@link #then()} or {@link #then(Object)} will append a new editing component to the end of the
+ * and a call to {@link FancyMessage#then()} or {@link FancyMessage#then(TextualComponent)} will append a new editing component to the end of the
  * message,
  * optionally initializing it with text. Further property-setting method calls will affect that editing component.
  * </p>
@@ -837,7 +836,7 @@ public class FancyMessage
     /**
      * Convert this message to a human-readable string with limited formatting.
      * This method is used to send this message to clients without JSON formatting support.
-     * <p>
+     * <br>
      * Serialization of this message by using this message will include (in this order for each message part):
      * <ol>
      * <li>The color of each message part.</li>
@@ -846,9 +845,10 @@ public class FancyMessage
      * </ol>
      * The primary omissions are tooltips and clickable actions. Consequently, this method should be used only as a last
      * resort.
-     * </p>
+     * <br>
      * <p>
-     * Color and formatting can be removed from the returned string by using {@link ChatColor#stripColor(String)}.</p>
+     * Color and formatting can be removed from the returned string by using {@link ChatColor#stripColor(String)}.
+     * </p>
      *
      * @return A human-readable string representing limited formatting in addition to the core text of this message.
      */
