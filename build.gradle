@@ -49,6 +49,7 @@ task sourcesJar(type: Jar) {
 
 shadowJar {
     dependencies {
+        exclude "org.bukkit:bukkit"
         exclude "org.spigotmc:spigot-api"
     }
 
