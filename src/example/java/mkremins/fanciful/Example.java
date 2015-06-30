@@ -23,7 +23,6 @@
 package mkremins.fanciful;
 
 import static org.bukkit.ChatColor.*;
-import mkremins.fanciful.FancyMessage;
 
 /**
  * An example class demonstrating some of Fanciful's functionality.
