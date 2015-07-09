@@ -50,14 +50,16 @@ import static mkremins.fanciful.TextualComponent.rawText;
 
 /**
  * Represents a formattable message. Such messages can use elements such as colors, formatting codes, hover and click
- * data, and other features provided by the vanilla Minecraft <a href="http://minecraft.gamepedia.com/Tellraw#Raw_JSON_Text">JSON
+ * data, and other features provided by the vanilla Minecraft <a href="http://minecraft.gamepedia
+ * .com/Tellraw#Raw_JSON_Text">JSON
  * message formatter</a>.
  * This class allows plugins to emulate the functionality of the vanilla Minecraft <a
  * href="http://minecraft.gamepedia.com/Commands#tellraw">tellraw command</a>.
  * <p>
  * This class follows the builder pattern, allowing for method chaining.
  * It is set up such that invocations of property-setting methods will affect the current editing component,
- * and a call to {@link FancyMessage#then()} or {@link FancyMessage#then(TextualComponent)} will append a new editing component to the end of the
+ * and a call to {@link FancyMessage#then()} or {@link FancyMessage#then(TextualComponent)} will append a new editing
+ * component to the end of the
  * message,
  * optionally initializing it with text. Further property-setting method calls will affect that editing component.
  * </p>
@@ -307,7 +309,8 @@ public class FancyMessage
     }
 
     /**
-     * Set the behavior of the current editing component to display information about a parameterless statistic when the
+     * Set the behavior of the current editing component to display information about a parameterless statistic when
+     * the
      * client hovers over the text.
      * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
      * which
@@ -344,7 +347,8 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display information about a statistic parameter with a
      * material when the client hovers over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param which
@@ -384,7 +388,8 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display information about a statistic parameter with an
      * entity type when the client hovers over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param which
@@ -424,7 +429,8 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display information about an item when the client hovers
      * over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param itemJSON
@@ -440,7 +446,8 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display information about an item when the client hovers
      * over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param itemStack
@@ -463,7 +470,8 @@ public class FancyMessage
 
     /**
      * Set the behavior of the current editing component to display raw text when the client hovers over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param text
@@ -482,7 +490,8 @@ public class FancyMessage
      * they are applied.</p>
      *
      * @param lines
-     *         The lines of text which will be displayed to the client upon hovering. The iteration order of this object
+     *         The lines of text which will be displayed to the client upon hovering. The iteration order of this
+     *         object
      *         will be the order in which the lines of the tooltip are created.
      * @return This builder instance.
      */
@@ -516,7 +525,8 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display formatted text when the client hovers over the
      * text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param text
@@ -538,7 +548,8 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display the specified lines of formatted text when the
      * client hovers over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param lines
@@ -581,11 +592,13 @@ public class FancyMessage
     /**
      * Set the behavior of the current editing component to display the specified lines of formatted text when the
      * client hovers over the text.
-     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on which
+     * <p>Tooltips do not inherit display characteristics, such as color and styles, from the message component on
+     * which
      * they are applied.</p>
      *
      * @param lines
-     *         The lines of text which will be displayed to the client upon hovering. The iteration order of this object
+     *         The lines of text which will be displayed to the client upon hovering. The iteration order of this
+     *         object
      *         will be the order in which the lines of the tooltip are created.
      * @return This builder instance.
      */
@@ -610,7 +623,7 @@ public class FancyMessage
         return this;
     }
     /*
-	
+
 	/**
 	 * If the text is a translatable key, and it has replaceable values, this function can be used to set the
 	 * replacements that will be used in the message.
@@ -865,7 +878,8 @@ public class FancyMessage
      * <li>The applicable stylizations for each message part.</li>
      * <li>The core text of the message part.</li>
      * </ol>
-     * The primary omissions are tooltips and clickable actions. Consequently, this method should be used only as a last
+     * The primary omissions are tooltips and clickable actions. Consequently, this method should be used only as a
+     * last
      * resort.
      * <br>
      * <p>
@@ -993,7 +1007,8 @@ public class FancyMessage
                         // Assume composite type
                         // The only composite type we currently store is another FancyMessage
                         // Therefore, recursion time!
-                        component.hoverActionData = deserialize(object.get("value").toString() /* This should properly serialize the JSON object as a JSON string */);
+                        component.hoverActionData = deserialize(object.get("value").toString() /* This should
+                        properly serialize the JSON object as a JSON string */);
                     }
                 } else if (entry.getKey().equals("insertion")) {
                     component.insertionData = entry.getValue().getAsString();
