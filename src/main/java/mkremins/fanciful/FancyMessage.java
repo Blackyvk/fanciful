@@ -50,8 +50,7 @@ import static mkremins.fanciful.TextualComponent.rawText;
 
 /**
  * Represents a formattable message. Such messages can use elements such as colors, formatting codes, hover and click
- * data, and other features provided by the vanilla Minecraft <a href="http://minecraft.gamepedia
- * .com/Tellraw#Raw_JSON_Text">JSON
+ * data, and other features provided by the vanilla Minecraft <a href="http://minecraft.gamepedia.com/Tellraw#Raw_JSON_Text">JSON
  * message formatter</a>.
  * This class allows plugins to emulate the functionality of the vanilla Minecraft <a
  * href="http://minecraft.gamepedia.com/Commands#tellraw">tellraw command</a>.
@@ -59,9 +58,7 @@ import static mkremins.fanciful.TextualComponent.rawText;
  * This class follows the builder pattern, allowing for method chaining.
  * It is set up such that invocations of property-setting methods will affect the current editing component,
  * and a call to {@link FancyMessage#then()} or {@link FancyMessage#then(TextualComponent)} will append a new editing
- * component to the end of the
- * message,
- * optionally initializing it with text. Further property-setting method calls will affect that editing component.
+ * component to the end of the message, optionally initializing it with text. Further property-setting method calls will affect that editing component.
  * </p>
  */
 public class FancyMessage
